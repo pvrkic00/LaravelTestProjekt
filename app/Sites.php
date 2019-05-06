@@ -13,14 +13,11 @@ class Sites extends Model
         return $this->belongsTo('App\User', 'user_id', 'id');
     }
 
-    public function database()
+    public function environments()
     {
-        return $this->belongsTo('App\Databases', 'database_id', 'id');
-    }
 
-    public function enviroments()
-    {
-        return $this->belongsTo('App\Enviroments', 'env_id', 'id');
+        return $this->hasMany(Enviroments::class);
+
     }
 
 }

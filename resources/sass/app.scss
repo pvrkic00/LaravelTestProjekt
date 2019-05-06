@@ -13,8 +13,7 @@
 @import '~simple-line-icons/css/simple-line-icons.css';
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 
-#myMenu a:hover, #myMenu a:focus {
-    color: #16181b;
-    text-decoration: none;
-    background-color: theme-color('primary');
+.dropdown-item:hover{
+    background-color:transparent !important;
+
 }

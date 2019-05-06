@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateDatabasesTable extends Migration
 {
@@ -16,7 +16,8 @@ class CreateDatabasesTable extends Migration
         Schema::create('site_db', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('url');
+            $table->integer('env_id')->unsigned();
+            $table->foreign('env_id')->references('id')->on('environments')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateDatabasesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('databases');
+        Schema::dropIfExists('site_db');
     }
 }

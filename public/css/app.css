@@ -10518,8 +10518,6 @@ h3 {
     border-color: #dee2e6;
   }
 }
-#myMenu a:hover, #myMenu a:focus {
-  color: #16181b;
-  text-decoration: none;
-  background-color: #3490dc;
+.dropdown-item:hover {
+  background-color: transparent !important;
 }

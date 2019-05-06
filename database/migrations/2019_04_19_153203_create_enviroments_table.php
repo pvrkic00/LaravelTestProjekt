@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateEnviromentsTable extends Migration
 {
@@ -16,6 +16,8 @@ class CreateEnviromentsTable extends Migration
         Schema::create('environments', function (Blueprint $table) {
             $table->increments('id');
             $table->enum('env_type', ['dev', 'prod','test','stage','qa']);
+            $table->integer('site_id')->unsigned();
+            $table->foreign('site_id')->references('id')->on('sites')->onDelete('cascade');
             $table->timestamps();
         });
     }

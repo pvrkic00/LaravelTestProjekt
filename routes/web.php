@@ -12,10 +12,11 @@
 */
 
 Route::middleware('auth')->group(function () {
-    Route::get('/home','ContentController@content' )->name('content');
+    Route::get('/home','ContentController@index' )->name('content');
+    Route::get('/addSite','SiteController@index')->name('addSite');
 
     Route::get('/dashboard', 'DashboardController@index');
-    Route::get('/','ContentController@content');
+    Route::get('/','ContentController@index');
 
 
 

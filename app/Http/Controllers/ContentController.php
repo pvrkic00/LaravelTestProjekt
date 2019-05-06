@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 
 class ContentController extends Controller
 {
@@ -15,10 +13,11 @@ class ContentController extends Controller
     }
 
 
-    public function content()
+    public function index()
     {
 
 
         return view('contents.home');
     }
+
 }
