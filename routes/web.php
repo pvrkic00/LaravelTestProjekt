@@ -11,9 +11,12 @@
 |
 */
 
+
 Route::middleware('auth')->group(function () {
     Route::get('/home','ContentController@index' )->name('content');
+
     Route::get('/addSite','SiteController@index')->name('addSite');
+    Route::post('/addSite', 'SiteController@newSite')->name('newSite');
 
     Route::get('/dashboard', 'DashboardController@index');
     Route::get('/','ContentController@index');
@@ -27,7 +30,6 @@ Route::middleware('auth')->group(function () {
 
 
 Auth::routes();
-
 
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');

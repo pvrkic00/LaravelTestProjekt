@@ -16,8 +16,8 @@ class CreateDatabasesTable extends Migration
         Schema::create('site_db', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('env_id')->unsigned();
-            $table->foreign('env_id')->references('id')->on('environments')->onDelete('cascade');
+            $table->integer('environments_id')->unsigned();
+            $table->foreign('environments_id')->references('id')->on('environments')->onDelete('cascade');
             $table->timestamps();
         });
     }

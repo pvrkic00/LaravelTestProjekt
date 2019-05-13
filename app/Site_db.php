@@ -7,8 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Site_db extends Model
 {
     //
+    protected $table = 'site_db';
 
-    public function environmentsDB(){
-        return $this->belongsTo(Environments::class,'env_id','id');
+    //protected $fillable=['environments_id'];
+
+
+    public function environments()
+    {
+        return $this->belongsTo(Environments::class);
     }
 }

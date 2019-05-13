@@ -17,7 +17,7 @@ class CreateEnviromentsTable extends Migration
             $table->increments('id');
             $table->enum('env_type', ['dev', 'prod','test','stage','qa']);
             $table->integer('site_id')->unsigned();
-            $table->foreign('site_id')->references('id')->on('sites')->onDelete('cascade');
+            $table->foreign('site_id')->references('id')->on('site')->onDelete('cascade');
             $table->timestamps();
         });
     }
